@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div *ngIf="sidebarStatus" style="height: 90vh; width: fit-content;" class="col-lg-2 bg-dark d-flex flex-column p-3">
+            <a style="text-decoration:none;color: white;" routerLink="/dashboard">Home</a>
+            <a style="text-decoration:none;color: white;" routerLink="/users">Users</a>
+            <button (click)="logout()" class="btn btn-link mt-auto text-light">LogOut</button>
+        </div>
+        <div class="col ">
+            <div class="row mt-2" >
+                <div class="col-lg-8">
+                    <div style="height: 140px; background-image: url('https://static.vecteezy.com/system/resources/previews/000/701/690/non_2x/abstract-polygonal-banner-background-vector.jpg'); background-size: cover;" class="banner rounded p-3 d-flex align-items-center shadow">
+                        <h1> <i (click)="menuClicked()" class="fa-solid fa-bars text-light"></i> Welcome {{ adminName}}</h1>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-lg-6"><app-calander></app-calander></div>
+                        <div class="col-lg-6"><app-chart></app-chart></div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="height: 370px;" class="rounded p-2 border shadow">
+                    <app-edit-admin (onAdminChange)="adminChange($event)"></app-edit-admin>
+                    </div>
+                    <div style="height: 100px; background-image: url('https://static.vecteezy.com/system/resources/previews/000/701/690/non_2x/abstract-polygonal-banner-background-vector.jpg'); background-size: cover;" class="banner rounded p-3 d-flex align-items-center justify-content-center shadow mt-1">
+                        <h1> <i class="fa-solid fa-users ms-1 text-light"></i> All users :{{ userCount}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
